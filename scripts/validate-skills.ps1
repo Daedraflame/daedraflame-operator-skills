@@ -18,6 +18,10 @@ $requiredOrder = @(
 )
 
 $failures = @()
+$backtick = [string][char]96
+$tripleFenceText = ($backtick * 3) + "text"
+$doubleFenceText = ($backtick * 2) + "text"
+$doubleFence = $backtick * 2
 
 Get-ChildItem -Path "skills" -Directory | Sort-Object Name | ForEach-Object {
     $folder = $_.Name
@@ -59,13 +63,13 @@ Get-ChildItem -Path "skills" -Directory | Sort-Object Name | ForEach-Object {
         $failures += "$folder has malformed one-line frontmatter"
     }
 
-    foreach ($needle in @("CRITICAL OUTPUT CONTRACT", "# Bottleneck", "# Need next", "Never list skills to the user", "Never output manage_skills", '```text')) {
+    foreach ($needle in @("CRITICAL OUTPUT CONTRACT", "# Bottleneck", "# Need next", "Never list skills to the user", "Never output manage_skills", $tripleFenceText)) {
         if ($text -notlike "*$needle*") {
             $failures += "$folder missing required text: $needle"
         }
     }
 
-    if ($text -match '(?m)^``text$' -or $text -match '(?m)^``$') {
+    if ($lines | Where-Object { $_.TrimEnd("`r") -eq $doubleFenceText -or $_.TrimEnd("`r") -eq $doubleFence }) {
         $failures += "$folder contains malformed two-backtick code fence"
     }
 
