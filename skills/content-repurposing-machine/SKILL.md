@@ -1,6 +1,6 @@
 ---
 name: content-repurposing-machine
-version: 1.0.1
+version: 1.0.2
 category: creator-business
 status: published
 confidence: 0.95
