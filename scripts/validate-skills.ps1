@@ -59,10 +59,14 @@ Get-ChildItem -Path "skills" -Directory | Sort-Object Name | ForEach-Object {
         $failures += "$folder has malformed one-line frontmatter"
     }
 
-    foreach ($needle in @("CRITICAL OUTPUT CONTRACT", "# Bottleneck", "# Need next", "Never list skills to the user", "Never output manage_skills")) {
+    foreach ($needle in @("CRITICAL OUTPUT CONTRACT", "# Bottleneck", "# Need next", "Never list skills to the user", "Never output manage_skills", '```text')) {
         if ($text -notlike "*$needle*") {
             $failures += "$folder missing required text: $needle"
         }
+    }
+
+    if ($text -match '(?m)^``text$' -or $text -match '(?m)^``$') {
+        $failures += "$folder contains malformed two-backtick code fence"
     }
 
     $positions = @()

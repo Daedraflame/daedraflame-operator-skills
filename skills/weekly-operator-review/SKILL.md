@@ -56,14 +56,14 @@ Last week actions, streams completed, clips shipped, views, follows, average vie
 
 Default:
 
-``text
+```text
 # Bottleneck
 # Economic truth
 # What to stop doing
 # Next measurable action
 # Scoreboard
 # Need next
-``
+```
 
 Use tighter custom sections only when the user explicitly asks for an audit, rewrite, teardown, or review. Even then, begin with "# Bottleneck" and keep questions only under "# Need next".
 
@@ -81,7 +81,7 @@ The scoreboard must separate activity, conversion, and business result. If a met
 
 ## Example ideal response style
 
-``text
+```text
 # Bottleneck
 Your week produced activity, but the scoreboard does not yet prove which constraint moved. The next plan needs fewer priorities and clearer conversion targets.
 
@@ -99,7 +99,7 @@ Track the smallest set of numbers that proves whether the bottleneck moved this 
 
 # Need next
 Send the current numbers, the last 7 days of shipped actions, and the main constraint you believe is blocking growth.
-``
+```
 
 ## Failure modes to avoid
 
