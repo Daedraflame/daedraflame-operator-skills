@@ -1,7 +1,7 @@
 ---
 name: daedraflame-memory
-description: Lightweight memory skill for Daedraflame context, past actions, decisions, experiments, and creator-business scoreboard continuity across sessions.
-version: 1.0.0
+description: Context memory for Micheal / Daedraflame, his creator stack, operating preferences, and durable scoreboard facts across sessions.
+version: 1.0.1
 category: creator-business
 status: published
 confidence: 0.95
@@ -9,99 +9,82 @@ confidence: 0.95
 
 # Daedraflame Memory
 
-Retrieval keywords: Daedraflame, Micheal, memory, scoreboard, Twitch horror, Shorts, Discord, chaos cards, Dixper-style tools, past actions, creator context, continuity
+Retrieval keywords: Micheal, Daedraflame, Twitch, horror, Shorts, Discord, Odysseus, Ollama, Codex, GitHub, PowerShell, local AI, chaos cards, Dixper-style tools, scoreboard
 
 ## Purpose
 
-Keep durable context for Daedraflame's creator-business work so future sessions can continue from the same operating picture instead of rediscovering the basics.
+Store context that helps the operator remember who Micheal / Daedraflame is and what matters. This is context, not the main behaviour contract.
 
-This skill is memory-oriented. It should support the master operator skill by preserving context, decisions, experiments, and scoreboards.
+Memory = who Micheal is and what context matters.
 
-## Core identity
+Router = how the model behaves and diagnoses.
 
-- Creator: Micheal / Daedraflame.
-- Primary content lane: Twitch horror streaming.
-- Signature asset: real reactions, fear, panic, recovery, chaotic live moments, and personality-driven horror.
-- Growth stack: Twitch live, Shorts/TikTok/Reels, Discord/community, monetisation, creator tools.
-- Product direction: Dixper-style interaction tools, chaos cards, audience-triggered stream moments, and creator utilities.
-- Operating constraints: ADHD/autistic wiring, context switching cost, need for clear priority, concrete next action, and visible scoreboard.
+## Identity
 
-## Business context to remember
+- Micheal / Daedraflame is a Twitch creator focused on horror streaming.
+- The strongest signal is real horror reactions: fear, panic, chaos, recovery, and chat making things worse.
+- The creator work spans Twitch, short-form clips, Discord/community, monetisation, and creator tools.
+- He is building with Odysseus, Ollama, Codex, GitHub, PowerShell, and local AI workflows.
 
-- Twitch is the relationship and retention surface.
-- Short-form is the main acquisition surface.
-- Discord is the owned-audience and ritual surface.
-- Reactions are proof assets.
-- Clips should show payoff before context.
-- Strong live engagement with low viewer count usually points to acquisition/distribution.
-- Community size is less important than activation and weekly active members.
-- Monetisation depends on proof, trust, offer clarity, and conversion rhythm.
-- Product ideas need one buyer, one payoff, one proof event, one fulfilment path.
+## Creator-business context
 
-## Scoreboard fields
+- Twitch is relationship and retention.
+- Short-form is acquisition.
+- Discord is the owned-audience return loop.
+- Horror reactions are proof assets.
+- Live engagement with low viewer count suggests acquisition/distribution is weak.
+- A good stream that creates no clips leaves the proof trapped inside Twitch.
+- Qualified horror viewers matter more than generic views.
+- Stream chaos cards and Dixper-style tools are productisation ideas that need proof, demand, and fulfilment constraints.
 
-Maintain or request these when relevant:
+## Operating preferences
 
-- Average viewers.
-- Returning viewers.
-- Unique chatters.
-- First 10-minute retention.
-- Follows per stream.
-- Clips shipped.
-- 3-second hold.
-- Completion rate.
-- Follows per 1,000 short-form views.
-- Twitch clicks.
-- Discord joins per stream.
-- Discord weekly active members.
-- Subs per 100 average viewers.
-- Revenue per stream.
-- Maker blocks completed.
-- Product validation actions completed.
+- Direct, grounded, practical communication.
+- No generic advice.
+- No empty motivation.
+- No therapy-speak.
+- No corporate voice.
+- Prefer concrete next actions and visible scoreboards.
+- Reduce context switching.
+- Keep plans compatible with ADHD/autistic operating constraints.
+
+## Durable scoreboard fields
+
+Track when available:
+
+- average viewers
+- returning viewers
+- unique chatters
+- follows per stream
+- clips posted per stream
+- best recent short-form view count
+- 3-second hold
+- average watch time
+- completion rate
+- follows per clip
+- Twitch clicks
+- Discord joins
+- returning viewers next stream
+- subs/supporter actions
+- chaos card or Dixper-style validation actions
 
 ## Past-action memory format
 
-When storing or summarising history, use this format:
+Use this structure when summarising history:
 
 - Date or week:
 - Bottleneck diagnosed:
-- One Thing chosen:
-- Action committed:
+- One action committed:
 - Scoreboard target:
 - Result:
 - Decision:
 - Next constraint:
 
-## Experiment memory format
+## Memory rules
 
-Track experiments like this:
-
-- Experiment:
-- Framework used:
-- Hypothesis:
-- Asset or action shipped:
-- Metric watched:
-- Outcome:
-- Keep / improve / stop:
-
-## Decision rules
-
-- Prefer current scoreboard data over old assumptions.
-- Do not overwrite durable context unless the user clearly changes direction.
-- If a prior action failed, preserve the result and diagnose the constraint.
-- If a prior action worked, preserve the proof and recommend More or Better before New.
-- Keep memory factual, concise, and operational.
-
-## What not to store
-
-- Do not store private sensitive details unrelated to creator work.
 - Do not invent numbers.
-- Do not turn temporary emotion into permanent identity.
-- Do not store medical claims or diagnoses beyond user-provided operating preferences.
-- Do not store internal tool-call or skill-routing text.
-
-## How to use with the master operator
-
-Use this memory to inform the first-pass diagnosis. The operator response should still begin with `# Bottleneck` and should not explain that memory was used.
-
-If memory is missing, ask for only the minimum missing scoreboard numbers under `# Need next`.
+- Do not duplicate the whole router framework here.
+- Preserve facts, decisions, experiments, and results.
+- Update memory when the user gives new durable context.
+- Treat emotional state as temporary unless the user explicitly says it is a durable operating constraint.
+- Keep memory short enough to be useful.
