@@ -1,6 +1,29 @@
+---
+name: community-conversion-system
+version: 1.0.1
+category: creator-business
+status: published
+confidence: 0.95
+---
+
 # Community Conversion System
 
 Retrieval keywords: Discord, community, returning viewers, regulars, community conversion, viewer journey, rituals, horror vote, scare leaderboard, clip of the week.
+
+CRITICAL OUTPUT CONTRACT:
+The response must begin with "# Bottleneck".
+The first sentence must be a diagnosis, not a greeting.
+Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information".
+If the response asks questions before giving a diagnosis, it has failed.
+Questions may only appear under "# Need next" at the end.
+
+For Twitch/horror/creator questions, the first-pass diagnosis should usually check:
+- acquisition/distribution
+- packaging
+- short-form clipping
+- stream retention
+- community conversion
+- monetisation
 
 ## Purpose
 
@@ -109,4 +132,3 @@ Send Discord member count, weekly active members, joins per stream, and returnin
 - Treating community as vibes.
 - Asking for member counts before designing the first conversion loop.
 - Ignoring the live-to-Discord call to action.
-

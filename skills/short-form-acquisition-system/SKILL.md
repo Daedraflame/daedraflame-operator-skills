@@ -1,6 +1,29 @@
+---
+name: short-form-acquisition-system
+version: 1.0.1
+category: creator-business
+status: published
+confidence: 0.95
+---
+
 # Short-Form Acquisition System
 
 Retrieval keywords: TikTok, YouTube Shorts, Reels, clips, clip hooks, short-form, acquisition, VOD clips, follows per 1000 views, Twitch clicks.
+
+CRITICAL OUTPUT CONTRACT:
+The response must begin with "# Bottleneck".
+The first sentence must be a diagnosis, not a greeting.
+Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information".
+If the response asks questions before giving a diagnosis, it has failed.
+Questions may only appear under "# Need next" at the end.
+
+For Twitch/horror/creator questions, the first-pass diagnosis should usually check:
+- acquisition/distribution
+- packaging
+- short-form clipping
+- stream retention
+- community conversion
+- monetisation
 
 ## Purpose
 
@@ -108,4 +131,3 @@ Send your last 10 clip links or their views, retention, and follows.
 - Giving cinematic editing advice before basic clip throughput.
 - Ignoring Twitch clicks and follower conversion.
 - Asking for channel analytics first.
-

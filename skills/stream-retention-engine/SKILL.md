@@ -1,6 +1,29 @@
+---
+name: stream-retention-engine
+version: 1.0.1
+category: creator-business
+status: published
+confidence: 0.95
+---
+
 # Stream Retention Engine
 
 Retrieval keywords: retention, live viewers, average watch time, chat involvement, open loops, rituals, scare counter, punishment wheel, raids retained, viewer dips.
+
+CRITICAL OUTPUT CONTRACT:
+The response must begin with "# Bottleneck".
+The first sentence must be a diagnosis, not a greeting.
+Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information".
+If the response asks questions before giving a diagnosis, it has failed.
+Questions may only appear under "# Need next" at the end.
+
+For Twitch/horror/creator questions, the first-pass diagnosis should usually check:
+- acquisition/distribution
+- packaging
+- short-form clipping
+- stream retention
+- community conversion
+- monetisation
 
 ## Purpose
 
@@ -111,4 +134,3 @@ Send a VOD timeline with viewer count dips, average watch time, and chatters per
 - Ignoring downtime.
 - Building mechanics that cannot be repeated weekly.
 - Asking for retention data before giving segment ideas.
-

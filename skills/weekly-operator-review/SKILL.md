@@ -1,6 +1,29 @@
+---
+name: weekly-operator-review
+version: 1.0.1
+category: creator-business
+status: published
+confidence: 0.95
+---
+
 # Weekly Operator Review
 
 Retrieval keywords: weekly review, operator review, creator scoreboard, what moved, what stalled, next week plan, bottleneck review, Daedraflame weekly.
+
+CRITICAL OUTPUT CONTRACT:
+The response must begin with "# Bottleneck".
+The first sentence must be a diagnosis, not a greeting.
+Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information".
+If the response asks questions before giving a diagnosis, it has failed.
+Questions may only appear under "# Need next" at the end.
+
+For Twitch/horror/creator questions, the first-pass diagnosis should usually check:
+- acquisition/distribution
+- packaging
+- short-form clipping
+- stream retention
+- community conversion
+- monetisation
 
 ## Purpose
 
@@ -116,4 +139,3 @@ Send best clip metrics, returning viewers, revenue, and Discord active members.
 - Making every metric equally important.
 - Giving a monthly strategy when weekly action is needed.
 - Asking for perfect data before making the weekly call.
-

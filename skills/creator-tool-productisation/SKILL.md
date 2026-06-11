@@ -1,6 +1,29 @@
+---
+name: creator-tool-productisation
+version: 1.0.1
+category: creator-business
+status: published
+confidence: 0.95
+---
+
 # Creator Tool Productisation
 
 Retrieval keywords: Dixper style, chaos cards, stream chaos, viewer packs, cards, product MVP, browser source, triggers, mod approval, cooldowns, panic disable, creator tool.
+
+CRITICAL OUTPUT CONTRACT:
+The response must begin with "# Bottleneck".
+The first sentence must be a diagnosis, not a greeting.
+Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information".
+If the response asks questions before giving a diagnosis, it has failed.
+Questions may only appear under "# Need next" at the end.
+
+For Twitch/horror/creator questions, the first-pass diagnosis should usually check:
+- acquisition/distribution
+- packaging
+- short-form clipping
+- stream retention
+- community conversion
+- monetisation
 
 ## Purpose
 
@@ -115,4 +138,3 @@ Send current feature list, payment method, effect types, and safety constraints.
 - Ignoring cooldowns and panic disable.
 - Using gambling-like rarity pressure.
 - Asking for a full spec before giving a practical MVP.
-
