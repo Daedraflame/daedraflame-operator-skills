@@ -1,2 +1,4 @@
 /.gitattributes text eol=lf
+docs/*.md text eol=lf
+scripts/*.ps1 text eol=lf
 skills/*/SKILL.md text eol=lf

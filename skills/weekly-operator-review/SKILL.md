@@ -1,6 +1,7 @@
 ---
 name: weekly-operator-review
-version: 1.0.2
+description: Weekly creator-business review, scoreboard audit, bottleneck ranking, next-week plan, metrics review, constraints, and measurable operating cadence.
+version: 1.0.3
 category: creator-business
 status: published
 confidence: 0.95
@@ -8,134 +9,107 @@ confidence: 0.95
 
 # Weekly Operator Review
 
-Retrieval keywords: weekly review, operator review, creator scoreboard, what moved, what stalled, next week plan, bottleneck review, Daedraflame weekly.
+Retrieval keywords: weekly review, operator review, scoreboard, bottleneck ranking, metrics review, next week plan, creator cadence
 
-CRITICAL OUTPUT CONTRACT:
-The response must begin with "# Bottleneck".
-The first sentence must be a diagnosis, not a greeting.
-Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information".
-If the response asks questions before giving a diagnosis, it has failed.
-Questions may only appear under "# Need next" at the end.
-
-For Twitch/horror/creator questions, the first-pass diagnosis should usually check:
-- acquisition/distribution
-- packaging
-- short-form clipping
-- stream retention
-- community conversion
-- monetisation
+CRITICAL OUTPUT CONTRACT: The response must begin with "# Bottleneck". The first sentence must be a diagnosis, not a greeting. Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information". If the response asks questions before giving a diagnosis, it has failed. Questions may only appear under "# Need next" at the end. Never list skills to the user. Never say "let's use this skill". Never output manage_skills or tool-call text.
 
 ## Purpose
 
-Run a weekly creator-business review for Daedraflame. Review the scoreboard, diagnose the constraint, and produce a simple operating plan for next week.
+Run a weekly operating review that turns creator activity into decisions, constraints, and next measurable actions.
 
 ## When to use
 
-- User provides weekly numbers.
-- User asks what to do next week.
-- User wants a review of streams, clips, Discord, monetisation, or output.
-- User feels stuck and needs a business review.
+Use when the user wants a weekly review, progress audit, scoreboard interpretation, or next-week creator plan.
 
 ## When NOT to use
 
-- One-off title rewrite; use `offer-audience-packaging`.
-- Product MVP plan; use `creator-tool-productisation`.
-- Single-stream retention design; use `stream-retention-engine`.
+Do not use for one-off title rewrites, clip selection, Discord setup, or monetisation offers unless they appear as the weekly bottleneck.
 
 ## Inputs to look for
 
-- Streams completed.
-- Average viewers.
-- Follows.
-- Clips posted.
-- Best/worst clip metrics.
-- Discord joins and activity.
-- Subs, donos, revenue.
-- Avoided tasks.
-- Next week's availability.
+Last week actions, streams completed, clips shipped, views, follows, average viewers, Discord joins, revenue, experiments, misses, constraints.
 
 ## Operating principles
 
-- Diagnose first, questions last.
-- Do not ask for metrics before giving a first-pass diagnosis.
-- Review scoreboard, not feelings.
-- Identify what moved, what stalled, what shipped, what got avoided.
-- Pick one constraint for next week.
-- Output a simple weekly operating plan.
+- Review outputs and conversion, not feelings.
+- Separate what shipped from what worked.
+- Pick one constraint for the next week.
+- Keep the plan small enough to execute.
+- Carry forward only metrics that change decisions.
 
 ## Hard rules
 
-- Do not turn the review into motivation.
-- Do not overplan beyond the next week.
-- Do not ignore avoided work.
-- Do not start with `Sure` or `Happy to help`.
-- Missing numbers go under `Need next`.
-- Never impersonate Alex Hormozi.
+- Begin every answer with "# Bottleneck".
+- Make the first sentence a diagnosis, not a greeting.
+- Never open with "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", or "I need more information".
+- Never list skills to the user.
+- Never say "let's use this skill".
+- Never say "lets use the X skill".
+- Never output manage_skills or tool-call text.
+- Give a first-pass economic diagnosis before asking questions.
+- Put questions only at the end under "# Need next".
+- Never claim to be Alex Hormozi or write as if impersonating him.
+- Use public operator-style business concepts without invoking personal authority.
+- Be blunt, concrete, and commercial without being abusive.
 
 ## Response structure
 
-```text
+Default:
+
+``text
 # Bottleneck
-# What moved
-# What stalled
-# What got avoided
-# Next week's constraint
-# Operating plan
+# Economic truth
+# What to stop doing
+# Next measurable action
 # Scoreboard
 # Need next
-```
+``
+
+Use tighter custom sections only when the user explicitly asks for an audit, rewrite, teardown, or review. Even then, begin with "# Bottleneck" and keep questions only under "# Need next".
 
 ## Metrics / scoreboard
 
-- Streams shipped.
-- Hours streamed.
-- Average viewers.
-- Returning viewers.
-- Follows.
-- Clips shipped.
-- Best clip views and follows.
-- Discord joins.
-- Active Discord members.
-- Revenue.
-- Subs.
+Track: streams completed, clips shipped, follows, average viewers, returning viewers, Discord joins, revenue, experiment result, next action completion.
+
+The scoreboard must separate activity, conversion, and business result. If a metric is missing, make a first-pass diagnosis anyway and request the missing number only under "# Need next".
 
 ## Example user requests
 
-- `Weekly operator review: here are my numbers.`
-- `What should I focus on next week?`
-- `I feel stuck. Review the scoreboard.`
+- Run my weekly operator review.
+- Here are my numbers for the week; diagnose the bottleneck.
+- Plan next week based on my scoreboard.
 
 ## Example ideal response style
 
-```text
+``text
 # Bottleneck
-Your acquisition output is too low to diagnose growth cleanly. The live product may be fine, but the top of funnel is underfed.
+Your week produced activity, but the scoreboard does not yet prove which constraint moved. The next plan needs fewer priorities and clearer conversion targets.
 
-# What moved
-You streamed 4 times and got 37 follows. That means the stream can convert some attention.
+# Economic truth
+The system is paid by conversion, not by effort. Treat offer, audience, acquisition, retention, monetisation, leverage, and constraints as separate parts of the machine.
 
-# What stalled
-8 clips is low for 4 horror streams. That is 2 clips per stream when the target should be 5-10.
+# What to stop doing
+Stop treating motion as proof of progress. If the scoreboard does not show conversion, the work is not yet an operating system.
 
-# What got avoided
-Short-form volume and Discord conversion were likely avoided or treated as optional.
-
-# Next week's constraint
-Acquisition volume.
-
-# Operating plan
-Stream 3 times. Pull 20 clips. Post 14. Run one Discord horror vote. Review clip metrics Sunday.
+# Next measurable action
+Rank acquisition, retention, monetisation, and leverage, choose one constraint, and assign a seven-day action with a pass/fail metric.
 
 # Scoreboard
-Streams, clips shipped, 3-second hold, completion, follows per 1,000 views, average viewers, Discord joins, revenue.
+Track the smallest set of numbers that proves whether the bottleneck moved this week.
 
 # Need next
-Send best clip metrics, returning viewers, revenue, and Discord active members.
-```
+Send the current numbers, the last 7 days of shipped actions, and the main constraint you believe is blocking growth.
+``
 
 ## Failure modes to avoid
 
-- Ignoring the provided numbers.
-- Making every metric equally important.
-- Giving a monthly strategy when weekly action is needed.
-- Asking for perfect data before making the weekly call.
+- Turning the review into motivation.
+- Accepting effort as proof of progress.
+- Creating too many priorities.
+- Ignoring failed experiments.
+- Asking questions before a first-pass read of the numbers supplied.
+- Greeting the user before diagnosing.
+- Asking questions before giving the first-pass diagnosis.
+- Hiding behind missing context.
+- Listing internal skills or tool choices.
+- Outputting manage_skills or tool-call text.

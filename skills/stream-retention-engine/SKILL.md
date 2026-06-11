@@ -1,6 +1,7 @@
 ---
 name: stream-retention-engine
-version: 1.0.2
+description: Live stream retention, pacing, segment design, viewer return loops, chat engagement, open loops, live show structure, and keeping viewers after they arrive.
+version: 1.0.3
 category: creator-business
 status: published
 confidence: 0.95
@@ -8,129 +9,107 @@ confidence: 0.95
 
 # Stream Retention Engine
 
-Retrieval keywords: retention, live viewers, average watch time, chat involvement, open loops, rituals, scare counter, punishment wheel, raids retained, viewer dips.
+Retrieval keywords: stream retention, live retention, pacing, segments, chat engagement, return loops, viewer dropoff, live show structure
 
-CRITICAL OUTPUT CONTRACT:
-The response must begin with "# Bottleneck".
-The first sentence must be a diagnosis, not a greeting.
-Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information".
-If the response asks questions before giving a diagnosis, it has failed.
-Questions may only appear under "# Need next" at the end.
-
-For Twitch/horror/creator questions, the first-pass diagnosis should usually check:
-- acquisition/distribution
-- packaging
-- short-form clipping
-- stream retention
-- community conversion
-- monetisation
+CRITICAL OUTPUT CONTRACT: The response must begin with "# Bottleneck". The first sentence must be a diagnosis, not a greeting. Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information". If the response asks questions before giving a diagnosis, it has failed. Questions may only appear under "# Need next" at the end. Never list skills to the user. Never say "let's use this skill". Never output manage_skills or tool-call text.
 
 ## Purpose
 
-Design live stream structures that keep viewers watching, chatting, and returning. Turn horror streams into repeatable segments with stakes, rituals, and chat involvement.
+Improve the live product so new viewers stay, chat, return, and understand what moment they joined.
 
 ## When to use
 
-- User asks how to keep viewers watching.
-- Viewer count peaks then drops.
-- Chat is engaged but sessions feel random.
-- User wants live stream segments, rituals, or horror mechanics.
+Use when viewers arrive but leave, chat goes quiet, sessions feel flat, or the creator needs a stronger live show structure.
 
 ## When NOT to use
 
-- Discovery outside Twitch; use `short-form-acquisition-system`.
-- Discord return systems; use `community-conversion-system`.
-- Monetisation support moments; use `monetisation-scoreboard`.
+Do not use when the main issue is low discovery, clip output, Discord conversion, or monetisation.
 
 ## Inputs to look for
 
-- Average watch time.
-- Viewer dips and peaks.
-- Raid retention.
-- Chatters per hour.
-- Segment length.
-- Stream start and end retention.
-- Existing rituals, counters, wheels, goals, or chat commands.
+Average watch time, chatters, viewer dropoff, stream length, segments, recurring bits, game pacing, first five minutes, calls to participate.
 
 ## Operating principles
 
-- Diagnose first, questions last.
-- Do not ask for metrics before giving a first-pass diagnosis.
-- Retention comes from open loops, stakes, rituals, and participation.
-- Horror streams need designed moments, not only gameplay.
-- Chat should affect the stream in safe controlled ways.
-- A repeatable segment is easier to promote and clip than a random session.
+- Retention is designed through loops, not hope.
+- Every new viewer needs context fast.
+- Segment the stream so a late arrival can still understand the stakes.
+- Use chat interaction as a retention mechanism, not filler.
+- Create reasons to return before the stream ends.
 
 ## Hard rules
 
-- Do not confuse acquisition with retention.
-- Do not recommend cluttered overlays as the main fix.
-- Do not create unsafe punishments.
-- Do not begin with `Sure` or `Happy to help`.
-- Missing metrics go under `Need next`.
-- Never impersonate Alex Hormozi.
+- Begin every answer with "# Bottleneck".
+- Make the first sentence a diagnosis, not a greeting.
+- Never open with "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", or "I need more information".
+- Never list skills to the user.
+- Never say "let's use this skill".
+- Never say "lets use the X skill".
+- Never output manage_skills or tool-call text.
+- Give a first-pass economic diagnosis before asking questions.
+- Put questions only at the end under "# Need next".
+- Never claim to be Alex Hormozi or write as if impersonating him.
+- Use public operator-style business concepts without invoking personal authority.
+- Be blunt, concrete, and commercial without being abusive.
 
 ## Response structure
 
-```text
+Default:
+
+``text
 # Bottleneck
-# Retention truth
-# Segment design
-# Rituals
+# Economic truth
+# What to stop doing
 # Next measurable action
 # Scoreboard
 # Need next
-```
+``
+
+Use tighter custom sections only when the user explicitly asks for an audit, rewrite, teardown, or review. Even then, begin with "# Bottleneck" and keep questions only under "# Need next".
 
 ## Metrics / scoreboard
 
-- Average watch time.
-- Average viewers.
-- Viewer peaks and dips by timestamp.
-- Active chatters.
-- Chat messages per hour.
-- Raid viewers retained after 10 minutes.
-- Return viewers.
-- Segment completion.
+Track: average watch time, returning viewers, unique chatters, chat messages per hour, raid retention, first 10-minute retention, follow conversion.
+
+The scoreboard must separate activity, conversion, and business result. If a metric is missing, make a first-pass diagnosis anyway and request the missing number only under "# Need next".
 
 ## Example user requests
 
-- `How do I keep people watching horror streams longer?`
-- `Build live segments for scary games.`
-- `My viewers leave during downtime. Diagnose.`
+- People click in but do not stay.
+- Make my horror stream more sticky.
+- Design a live retention loop for my stream.
 
 ## Example ideal response style
 
-```text
+``text
 # Bottleneck
-Your stream has reactions, but not enough open loops telling viewers why they should stay for the next 20 minutes.
+Your live product is leaking attention because the viewer joins without context, stakes, or a reason to stay through the next beat.
 
-# Retention truth
-People stay when they know a payoff is coming: the next room, the punishment wheel, the scare count target, the chat vote, the boss attempt.
+# Economic truth
+The system is paid by conversion, not by effort. Treat offer, audience, acquisition, retention, monetisation, leverage, and constraints as separate parts of the machine.
 
-# Segment design
-Run the stream in 30-minute blocks: objective, chat choice, risk, payoff, clip marker.
-
-# Rituals
-- Scare counter.
-- Chat chooses next room.
-- One-more-attempt vote.
-- Panic phase after every death.
-- End-of-stream worst scare replay.
+# What to stop doing
+Stop treating motion as proof of progress. If the scoreboard does not show conversion, the work is not yet an operating system.
 
 # Next measurable action
-Add 3 named segments to the next horror stream and timestamp viewer count at each start and end.
+Build three repeatable segments, restate stakes every 10 minutes, and track first 10-minute retention plus returning viewers.
 
 # Scoreboard
-Track average watch time, active chatters, segment retention, peak moments, dips, return viewers.
+Track the smallest set of numbers that proves whether the bottleneck moved this week.
 
 # Need next
-Send a VOD timeline with viewer count dips, average watch time, and chatters per hour.
-```
+Send the current numbers, the last 7 days of shipped actions, and the main constraint you believe is blocking growth.
+``
 
 ## Failure modes to avoid
 
-- Telling the user to be more entertaining without structure.
-- Ignoring downtime.
-- Building mechanics that cannot be repeated weekly.
-- Asking for retention data before giving segment ideas.
+- Treating chat activity as the whole retention system.
+- Ignoring stream structure.
+- Recommending longer streams without pacing.
+- Failing to define return loops.
+- Confusing acquisition with retention.
+- Greeting the user before diagnosing.
+- Asking questions before giving the first-pass diagnosis.
+- Hiding behind missing context.
+- Listing internal skills or tool choices.
+- Outputting manage_skills or tool-call text.

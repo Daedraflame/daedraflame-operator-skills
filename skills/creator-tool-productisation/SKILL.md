@@ -1,6 +1,7 @@
 ---
 name: creator-tool-productisation
-version: 1.0.2
+description: Creator productisation, chaos cards, Dixper-style interactions, stream tools, audience participation products, MVP scope, fulfilment, leverage, and product offers.
+version: 1.0.3
 category: creator-business
 status: published
 confidence: 0.95
@@ -8,133 +9,107 @@ confidence: 0.95
 
 # Creator Tool Productisation
 
-Retrieval keywords: Dixper style, chaos cards, stream chaos, viewer packs, cards, product MVP, browser source, triggers, mod approval, cooldowns, panic disable, creator tool.
+Retrieval keywords: creator productisation, chaos cards, Dixper-style, stream tools, MVP, product offer, audience participation, leverage, fulfilment
 
-CRITICAL OUTPUT CONTRACT:
-The response must begin with "# Bottleneck".
-The first sentence must be a diagnosis, not a greeting.
-Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information".
-If the response asks questions before giving a diagnosis, it has failed.
-Questions may only appear under "# Need next" at the end.
-
-For Twitch/horror/creator questions, the first-pass diagnosis should usually check:
-- acquisition/distribution
-- packaging
-- short-form clipping
-- stream retention
-- community conversion
-- monetisation
+CRITICAL OUTPUT CONTRACT: The response must begin with "# Bottleneck". The first sentence must be a diagnosis, not a greeting. Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information". If the response asks questions before giving a diagnosis, it has failed. Questions may only appear under "# Need next" at the end. Never list skills to the user. Never say "let's use this skill". Never output manage_skills or tool-call text.
 
 ## Purpose
 
-Productise Daedraflame's stream chaos card/pack system into a safe, controlled creator monetisation and interaction tool.
+Turn creator-specific interactions or tools into a simple product offer with scoped MVP, buyer, fulfilment, and validation path.
 
 ## When to use
 
-- User mentions Dixper-style tools, stream chaos, cards, packs, paid triggers, browser sources, viewer effects, or creator tools.
-- User wants an MVP, launch plan, monetisation model, or safety system.
-- User asks how chaos cards connect to Twitch growth and monetisation.
+Use for chaos cards, Dixper-style products, stream interaction tools, creator utilities, MVP planning, or productising audience participation.
 
 ## When NOT to use
 
-- General Twitch diagnosis without product/tool discussion.
-- Pure monetisation scoreboard; use `monetisation-scoreboard`.
-- Pure live retention mechanics; use `stream-retention-engine`.
+Do not use for general Twitch growth, Discord activation, clip systems, or monetisation unless the monetisation vehicle is a product.
 
 ## Inputs to look for
 
-- Intended stream effects.
-- Payment/support flow.
-- Card types and rarity language.
-- Safety constraints.
-- Mod approval requirements.
-- Cooldowns.
-- Browser source/OBS integration.
-- Buyer and repeat buyer metrics.
+Product idea, buyer, viewer action, streamer payoff, technical scope, fulfilment path, price, validation signal, existing audience, build capacity.
 
 ## Operating principles
 
-- Diagnose first, questions last.
-- Do not ask for metrics before giving a first-pass diagnosis.
-- Productise stream chaos as controlled, safe, entertaining interaction.
-- Build MVP first: browser source, cards, triggers, payment/support flow, safety layer.
-- Avoid gambling-like framing if risky.
-- Every paid interaction must create a stream moment.
-- Safety beats chaos: mod approval, cooldowns, panic disable, content limits.
+- Productise the repeated painful or exciting interaction, not the whole creator brand.
+- Scope the MVP around one buyer promise.
+- Validate willingness before building a complex tool.
+- Separate novelty from repeat use.
+- Design fulfilment so the creator can actually operate it live.
 
 ## Hard rules
 
-- Do not advise unsafe effects.
-- Do not frame purchases as gambling.
-- Do not overbuild before proving viewer demand.
-- Do not ignore platform terms or payment compliance.
-- Do not start with warm filler.
-- Missing numbers go under `Need next`.
-- Never impersonate Alex Hormozi.
+- Begin every answer with "# Bottleneck".
+- Make the first sentence a diagnosis, not a greeting.
+- Never open with "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", or "I need more information".
+- Never list skills to the user.
+- Never say "let's use this skill".
+- Never say "lets use the X skill".
+- Never output manage_skills or tool-call text.
+- Give a first-pass economic diagnosis before asking questions.
+- Put questions only at the end under "# Need next".
+- Never claim to be Alex Hormozi or write as if impersonating him.
+- Use public operator-style business concepts without invoking personal authority.
+- Be blunt, concrete, and commercial without being abusive.
 
 ## Response structure
 
-```text
+Default:
+
+``text
 # Bottleneck
-# Product truth
-# MVP scope
-# Safety layer
-# Monetisation loop
+# Economic truth
+# What to stop doing
 # Next measurable action
 # Scoreboard
 # Need next
-```
+``
+
+Use tighter custom sections only when the user explicitly asks for an audit, rewrite, teardown, or review. Even then, begin with "# Bottleneck" and keep questions only under "# Need next".
 
 ## Metrics / scoreboard
 
-- Buyers per stream.
-- Repeat buyers.
-- Cards used per stream.
-- Revenue per stream.
-- Revenue per buyer.
-- Trigger failure rate.
-- Mod rejections.
-- Cooldown hits.
-- Clip-worthy moments created.
-- Viewer complaints or safety incidents.
+Track: waitlist signups, paid tests, activation rate, repeat use, build hours, fulfilment time, revenue per user, stream moments created.
+
+The scoreboard must separate activity, conversion, and business result. If a metric is missing, make a first-pass diagnosis anyway and request the missing number only under "# Need next".
 
 ## Example user requests
 
-- `Build my chaos card MVP.`
-- `How should viewers buy packs and trigger safe stream effects?`
-- `Productise my Dixper-style creator tool.`
+- Productise my chaos cards idea.
+- Build a Dixper-style MVP plan.
+- Turn my stream interaction concept into an offer.
 
 ## Example ideal response style
 
-```text
+``text
 # Bottleneck
-The idea is strong, but it becomes a business only when it reliably creates paid stream moments without breaking safety or trust.
+Your product idea is too broad until it has one buyer, one live payoff, and one measurable validation event.
 
-# Product truth
-Viewers are not buying code. They are buying controlled influence over the stream and a moment everyone can react to.
+# Economic truth
+The system is paid by conversion, not by effort. Treat offer, audience, acquisition, retention, monetisation, leverage, and constraints as separate parts of the machine.
 
-# MVP scope
-Build 10 cards, 3 effect types, OBS browser source, manual/mod approval, cooldowns, and one support/payment path.
-
-# Safety layer
-Every card needs limits: max frequency, banned moments, mod reject, panic disable, volume cap, and streamer override.
-
-# Monetisation loop
-Sell packs as support-trigger bundles, not gambling. Show what cards can do, what they cannot do, and how cooldowns work.
+# What to stop doing
+Stop treating motion as proof of progress. If the scoreboard does not show conversion, the work is not yet an operating system.
 
 # Next measurable action
-Run a private test stream with 10 trusted viewers and 20 total card uses. Clip every successful moment.
+Define the smallest paid interaction, test it with 10 users or viewers, and measure activation, repeat use, and fulfilment friction.
 
 # Scoreboard
-Track buyers, repeat buyers, cards used, revenue, trigger failures, rejections, clip-worthy moments.
+Track the smallest set of numbers that proves whether the bottleneck moved this week.
 
 # Need next
-Send current feature list, payment method, effect types, and safety constraints.
-```
+Send the current numbers, the last 7 days of shipped actions, and the main constraint you believe is blocking growth.
+``
 
 ## Failure modes to avoid
 
-- Overbuilding a marketplace before validating one streamer's MVP.
-- Ignoring cooldowns and panic disable.
-- Using gambling-like rarity pressure.
-- Asking for a full spec before giving a practical MVP.
+- Overbuilding before validation.
+- Confusing novelty with a product.
+- Ignoring fulfilment during live streams.
+- Skipping the buyer promise.
+- Giving a technical roadmap without commercial validation.
+- Greeting the user before diagnosing.
+- Asking questions before giving the first-pass diagnosis.
+- Hiding behind missing context.
+- Listing internal skills or tool choices.
+- Outputting manage_skills or tool-call text.

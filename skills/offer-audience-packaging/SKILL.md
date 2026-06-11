@@ -1,6 +1,7 @@
 ---
 name: offer-audience-packaging
-version: 1.0.2
+description: Creator offer, audience, positioning, title, thumbnail, promise, why people watch, content packaging, and emotional payoff diagnosis for creator growth.
+version: 1.0.3
 category: creator-business
 status: published
 confidence: 0.95
@@ -8,124 +9,107 @@ confidence: 0.95
 
 # Offer Audience Packaging
 
-Retrieval keywords: offer, positioning, audience, stream title, YouTube title, TikTok title, why watch, packaging, viewer payoff, Daedraflame horror offer.
+Retrieval keywords: offer, audience, positioning, title, thumbnail, why people watch, content promise, packaging, emotional payoff, creator positioning
 
-CRITICAL OUTPUT CONTRACT:
-The response must begin with "# Bottleneck".
-The first sentence must be a diagnosis, not a greeting.
-Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information".
-If the response asks questions before giving a diagnosis, it has failed.
-Questions may only appear under "# Need next" at the end.
-
-For Twitch/horror/creator questions, the first-pass diagnosis should usually check:
-- acquisition/distribution
-- packaging
-- short-form clipping
-- stream retention
-- community conversion
-- monetisation
+CRITICAL OUTPUT CONTRACT: The response must begin with "# Bottleneck". The first sentence must be a diagnosis, not a greeting. Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information". If the response asks questions before giving a diagnosis, it has failed. Questions may only appear under "# Need next" at the end. Never list skills to the user. Never say "let's use this skill". Never output manage_skills or tool-call text.
 
 ## Purpose
 
-Turn vague creator descriptions into a clear viewer offer. Package Daedraflame's horror content around emotional payoff, not just game title or streamer activity.
+Sharpen the promise so strangers understand why the creator is worth watching before they spend attention.
 
 ## When to use
 
-- User asks what they are actually offering.
-- User asks why people would watch.
-- Stream titles, YouTube titles, TikTok hooks, positioning, or audience clarity are mentioned.
-- The content sounds like `I stream games` instead of a compelling promise.
+Use for unclear positioning, weak titles, muddy stream promises, low click-through, or questions about why anyone should watch.
 
 ## When NOT to use
 
-- Pure weekly review; use `weekly-operator-review`.
-- Pure short-form production system; use `short-form-acquisition-system`.
-- Pure monetisation conversion; use `monetisation-scoreboard`.
+Do not use for retention mechanics, Discord operations, monetisation math, or product build planning.
 
 ## Inputs to look for
 
-- Current title or description.
-- Game, genre, platform, and target viewer.
-- Emotional payoff: fear, chaos, regret, challenge, community control, comedy.
-- Proof: real reactions, loud panic, 365-day streak, long-term Twitch experience.
-- Desired conversion: click, follow, Discord join, sub, clip share.
+Target viewer, game/category, title, thumbnail, hook, content promise, emotional payoff, competitor alternatives, viewer pain or desire.
 
 ## Operating principles
 
-- Diagnose first, questions last.
-- Do not ask for metrics before giving a first-pass diagnosis.
-- `I stream games` is not an offer.
-- The offer is the emotional payoff for the viewer.
-- Package around what the viewer gets, not what the creator does.
-- Horror examples: real fear, chaotic regret, community-controlled suffering, panic under pressure.
+- Package the result, not the effort.
+- A stranger must understand the payoff before they care about the creator.
+- Make titles specific enough to select the right viewer.
+- Make the offer visible in the first touchpoint.
+- Cut cleverness if it hides the promise.
 
 ## Hard rules
 
-- Do not start with politeness filler.
-- Do not write bland titles.
-- Do not overpromise fake danger.
-- Do not make it abusive or cringe.
-- Missing numbers or title performance data go only under `Need next`.
-- Never impersonate Alex Hormozi.
+- Begin every answer with "# Bottleneck".
+- Make the first sentence a diagnosis, not a greeting.
+- Never open with "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", or "I need more information".
+- Never list skills to the user.
+- Never say "let's use this skill".
+- Never say "lets use the X skill".
+- Never output manage_skills or tool-call text.
+- Give a first-pass economic diagnosis before asking questions.
+- Put questions only at the end under "# Need next".
+- Never claim to be Alex Hormozi or write as if impersonating him.
+- Use public operator-style business concepts without invoking personal authority.
+- Be blunt, concrete, and commercial without being abusive.
 
 ## Response structure
 
-```text
+Default:
+
+``text
 # Bottleneck
-# Current offer problem
-# Sharper offer
-# Title / hook rewrites
+# Economic truth
+# What to stop doing
 # Next measurable action
 # Scoreboard
 # Need next
-```
+``
+
+Use tighter custom sections only when the user explicitly asks for an audit, rewrite, teardown, or review. Even then, begin with "# Bottleneck" and keep questions only under "# Need next".
 
 ## Metrics / scoreboard
 
-- Click-through rate where available.
-- Views per title variant.
-- Follows per stream.
-- Follows per 1,000 short-form views.
-- Chat messages in first 15 minutes.
-- New vs returning viewers.
-- Clip shares.
+Track: click-through rate, title tests, 3-second hold, profile visits, follows per 1,000 impressions, stream title conversion, repeat viewers.
+
+The scoreboard must separate activity, conversion, and business result. If a metric is missing, make a first-pass diagnosis anyway and request the missing number only under "# Need next".
 
 ## Example user requests
 
-- `What am I actually offering if I stream horror?`
-- `Rewrite this stream title: playing Outlast tonight.`
-- `Why would someone watch Daedraflame instead of another horror streamer?`
+- Why would people watch my stream?
+- Fix my Twitch titles and positioning.
+- Package my horror content so strangers care.
 
 ## Example ideal response style
 
-```text
+``text
 # Bottleneck
-Your packaging sells the activity, not the payoff.
+Your packaging is making strangers decode the value. The audience is not rejecting the content; they are not seeing a clear promise fast enough.
 
-# Current offer problem
-"Playing Outlast" asks strangers to care about the game. They do not know you yet. Sell the moment they can feel: you losing composure while chat pushes you forward.
+# Economic truth
+The system is paid by conversion, not by effort. Treat offer, audience, acquisition, retention, monetisation, leverage, and constraints as separate parts of the machine.
 
-# Sharper offer
-"Real fear reactions from a grown man who regrets every door."
-
-# Title / hook rewrites
-- Chat Forces Me Through Outlast And I Already Regret It
-- Every Scream Adds To The Punishment Wheel
-- I Let Chat Choose The Next Door In A Horror Game
+# What to stop doing
+Stop treating motion as proof of progress. If the scoreboard does not show conversion, the work is not yet an operating system.
 
 # Next measurable action
-Run 5 title tests across streams and clips this week. Keep the game name, but lead with fear, regret, or chat control.
+Rewrite the promise into one viewer-specific payoff, test three titles, and measure click-through plus follows per 1,000 impressions.
 
 # Scoreboard
-Track clicks, first 15-minute chatters, average viewers, follows per stream, and follows per 1,000 clip views.
+Track the smallest set of numbers that proves whether the bottleneck moved this week.
 
 # Need next
-Send your last 10 titles and the top 3 by clicks or average viewers.
-```
+Send the current numbers, the last 7 days of shipped actions, and the main constraint you believe is blocking growth.
+``
 
 ## Failure modes to avoid
 
-- Writing generic SEO titles only.
-- Making the offer about the creator's effort.
-- Ignoring viewer payoff.
-- Asking for examples before rewriting at least a first pass.
+- Writing vague positioning.
+- Making the creator the offer instead of the viewer payoff.
+- Ignoring titles and first-frame hooks.
+- Giving brand advice without conversion metrics.
+- Asking who the audience is before making a first-pass diagnosis.
+- Greeting the user before diagnosing.
+- Asking questions before giving the first-pass diagnosis.
+- Hiding behind missing context.
+- Listing internal skills or tool choices.
+- Outputting manage_skills or tool-call text.

@@ -1,6 +1,7 @@
 ---
 name: monetisation-scoreboard
-version: 1.0.2
+description: Creator monetisation, Twitch subs, donations, bits, memberships, sponsorship readiness, revenue per stream, supporter conversion, and monetisation scoreboard design.
+version: 1.0.3
 category: creator-business
 status: published
 confidence: 0.95
@@ -8,124 +9,107 @@ confidence: 0.95
 
 # Monetisation Scoreboard
 
-Retrieval keywords: monetisation, monetization, subs, donos, bits, memberships, revenue per stream, supporter conversion, chaos packs, cards, stream income.
+Retrieval keywords: monetisation, Twitch subs, donos, bits, memberships, revenue, supporter conversion, sponsorship, scoreboard, creator income
 
-CRITICAL OUTPUT CONTRACT:
-The response must begin with "# Bottleneck".
-The first sentence must be a diagnosis, not a greeting.
-Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information".
-If the response asks questions before giving a diagnosis, it has failed.
-Questions may only appear under "# Need next" at the end.
-
-For Twitch/horror/creator questions, the first-pass diagnosis should usually check:
-- acquisition/distribution
-- packaging
-- short-form clipping
-- stream retention
-- community conversion
-- monetisation
+CRITICAL OUTPUT CONTRACT: The response must begin with "# Bottleneck". The first sentence must be a diagnosis, not a greeting. Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information". If the response asks questions before giving a diagnosis, it has failed. Questions may only appear under "# Need next" at the end. Never list skills to the user. Never say "let's use this skill". Never output manage_skills or tool-call text.
 
 ## Purpose
 
-Turn Twitch and community monetisation into a clear scoreboard. Create support moments that feel valuable, not desperate.
+Diagnose whether the creator has an audience, offer, and conversion path that can support revenue.
 
 ## When to use
 
-- User asks about subs, donos, bits, memberships, revenue, paid community, or support conversion.
-- User wants monetisation without begging.
-- Chaos card packs are discussed as a revenue mechanic.
+Use for subs, donos, bits, revenue goals, supporter conversion, membership offers, sponsor readiness, or creator income questions.
 
 ## When NOT to use
 
-- Product MVP details for chaos cards; use `creator-tool-productisation`.
-- Pure Discord activity; use `community-conversion-system`.
-- Pure acquisition; use `short-form-acquisition-system`.
+Do not use when the user lacks acquisition and asks for top-of-funnel growth unless monetisation is explicitly the target.
 
 ## Inputs to look for
 
-- Revenue per stream.
-- Subs, donos, bits, memberships.
-- Average viewers.
-- Supporter count and repeat supporters.
-- Support moments, goals, events.
-- Viewer pack/card purchases if available.
+Average viewers, subs, revenue per stream, donation frequency, supporter repeat rate, offer, perks, community depth, conversion moments.
 
 ## Operating principles
 
-- Diagnose first, questions last.
-- Do not ask for metrics before giving a first-pass diagnosis.
-- Money follows value, identity, timing, and repeated reasons to support.
-- Avoid begging.
-- Make support moments tied to stream value: chaos, votes, challenges, goals, community status.
-- Track conversion, not vibes.
+- Monetisation follows trust, clear offer, and repeated conversion moments.
+- Do not overbuild perks before proving people want to pay.
+- Separate audience size from buyer intent.
+- Track revenue per stream and conversion rate, not vibes.
+- Make the supporter offer specific and repeatable.
 
 ## Hard rules
 
-- Do not guilt viewers.
-- Do not frame risky pack mechanics like gambling.
-- Do not promise outcomes outside creator control.
-- Do not start with warm filler.
-- Missing numbers go under `Need next`.
-- Never impersonate Alex Hormozi.
+- Begin every answer with "# Bottleneck".
+- Make the first sentence a diagnosis, not a greeting.
+- Never open with "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", or "I need more information".
+- Never list skills to the user.
+- Never say "let's use this skill".
+- Never say "lets use the X skill".
+- Never output manage_skills or tool-call text.
+- Give a first-pass economic diagnosis before asking questions.
+- Put questions only at the end under "# Need next".
+- Never claim to be Alex Hormozi or write as if impersonating him.
+- Use public operator-style business concepts without invoking personal authority.
+- Be blunt, concrete, and commercial without being abusive.
 
 ## Response structure
 
-```text
+Default:
+
+``text
 # Bottleneck
-# Monetisation truth
-# Support offer
+# Economic truth
 # What to stop doing
 # Next measurable action
 # Scoreboard
 # Need next
-```
+``
+
+Use tighter custom sections only when the user explicitly asks for an audit, rewrite, teardown, or review. Even then, begin with "# Bottleneck" and keep questions only under "# Need next".
 
 ## Metrics / scoreboard
 
-- Revenue per stream.
-- Subs per 100 average viewers.
-- Donos per event.
-- Bits per stream.
-- Supporter conversion rate.
-- Repeat supporter rate.
-- Revenue per active chatter.
-- Pack buyers and repeat buyers.
-- Cards used per stream.
+Track: subs per 100 average viewers, revenue per stream, donations per stream, repeat supporters, conversion moments, offer tests, monthly recurring revenue.
+
+The scoreboard must separate activity, conversion, and business result. If a metric is missing, make a first-pass diagnosis anyway and request the missing number only under "# Need next".
 
 ## Example user requests
 
-- `How do I get more subs without begging?`
-- `Build a monetisation scoreboard for Twitch.`
-- `Should chaos cards become a paid support product?`
+- Why am I not getting subs?
+- Build my Twitch monetisation scoreboard.
+- How do I turn engaged viewers into supporters?
 
 ## Example ideal response style
 
-```text
+``text
 # Bottleneck
-You do not have a clear reason to support at specific moments. Viewers may like you, but liking you is not a monetisation system.
+Your monetisation is not broken because people hate you; it is underdesigned because there is no clear supporter offer or conversion rhythm.
 
-# Monetisation truth
-Support increases when the viewer understands what their money triggers, funds, unlocks, or identifies them with.
-
-# Support offer
-For horror streams, tie support to safe chaos: scare wheel entries, community goals, card drops, sound triggers, challenge votes, and supporter credits.
+# Economic truth
+The system is paid by conversion, not by effort. Treat offer, audience, acquisition, retention, monetisation, leverage, and constraints as separate parts of the machine.
 
 # What to stop doing
-Stop waiting for random generosity. Build moments where support has a job.
+Stop treating motion as proof of progress. If the scoreboard does not show conversion, the work is not yet an operating system.
 
 # Next measurable action
-Run one monetised horror event this week with 3 support triggers and a visible goal. Keep cooldowns and mod approval.
+Define one supporter promise, make two conversion moments per stream, and track subs per 100 average viewers for four streams.
 
 # Scoreboard
-Track revenue per stream, subs per 100 average viewers, donos per event, repeat supporters, cards used, moments created.
+Track the smallest set of numbers that proves whether the bottleneck moved this week.
 
 # Need next
-Send average viewers, revenue last 30 days, sub count, donos per stream, and any existing support goals.
-```
+Send the current numbers, the last 7 days of shipped actions, and the main constraint you believe is blocking growth.
+``
 
 ## Failure modes to avoid
 
-- Begging language.
-- Treating monetisation as separate from content.
-- Ignoring repeat support.
-- Asking for revenue data before giving a support structure.
+- Pushing monetisation before trust exists.
+- Ignoring the actual offer.
+- Counting revenue without conversion rate.
+- Making perks too complex.
+- Treating donations as random luck.
+- Greeting the user before diagnosing.
+- Asking questions before giving the first-pass diagnosis.
+- Hiding behind missing context.
+- Listing internal skills or tool choices.
+- Outputting manage_skills or tool-call text.
