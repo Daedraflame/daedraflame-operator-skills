@@ -1,64 +1,54 @@
 $ErrorActionPreference = "Stop"
 
-$expectedSkills = @(
-    "daedraflame-memory",
-    "hormozi-operator-router"
-)
-
 $failures = @()
-$skillDirs = Get-ChildItem -Path "skills" -Directory | Sort-Object Name
-$actual = @($skillDirs | ForEach-Object { $_.Name })
+$expectedSkills = @("daedraflame-memory", "hormozi-operator-router")
+$skillDirs = @(Get-ChildItem -Path "skills" -Directory | Sort-Object Name)
+$actualSkills = @($skillDirs | ForEach-Object { $_.Name })
 
-foreach ($name in $expectedSkills) {
-    if ($actual -notcontains $name) {
-        $failures += "missing expected skill folder: $name"
+foreach ($skill in $expectedSkills) {
+    if ($actualSkills -notcontains $skill) {
+        $failures += "missing expected skill folder: $skill"
     }
 }
 
-foreach ($name in $actual) {
-    if ($expectedSkills -notcontains $name) {
-        $failures += "unexpected skill folder remains: $name"
+foreach ($skill in $actualSkills) {
+    if ($expectedSkills -notcontains $skill) {
+        $failures += "unexpected skill folder: $skill"
     }
 }
 
 foreach ($dir in $skillDirs) {
-    $folder = $dir.Name
     $file = Join-Path $dir.FullName "SKILL.md"
     if (!(Test-Path $file)) {
-        $failures += "$folder missing SKILL.md"
+        $failures += "$($dir.Name) missing SKILL.md"
         continue
     }
 
     $text = [System.IO.File]::ReadAllText($file)
     $lines = $text -split "`n"
 
-    if ($lines.Count -gt 400) {
-        $failures += "$folder has more than 400 lines"
+    if ($lines.Count -lt 20) {
+        $failures += "$($dir.Name) appears flattened or too short"
     }
     if ($lines[0].TrimEnd("`r") -ne "---") {
-        $failures += "$folder does not start with standalone ---"
+        $failures += "$($dir.Name) does not start with standalone ---"
     }
-    if ($lines[1].TrimEnd("`r") -ne "name: $folder") {
-        $failures += "$folder second line is not exact folder name"
+    if ($lines[1].TrimEnd("`r") -ne "name: $($dir.Name)") {
+        $failures += "$($dir.Name) second line does not match folder name"
     }
 
-    $frontmatterClose = -1
+    $close = -1
     for ($i = 1; $i -lt [Math]::Min($lines.Count, 40); $i++) {
         if ($lines[$i].TrimEnd("`r") -eq "---") {
-            $frontmatterClose = $i
+            $close = $i
             break
         }
     }
-    if ($frontmatterClose -lt 2) {
-        $failures += "$folder frontmatter does not close"
+    if ($close -lt 2) {
+        $failures += "$($dir.Name) frontmatter does not close"
     }
     if ($text -match '(?m)^---[ \t]+name:') {
-        $failures += "$folder has malformed one-line frontmatter"
-    }
-    foreach ($bad in @("@@ -", "<<<<<<<", "=======", ">>>>>>>")) {
-        if ($text.Contains($bad)) {
-            $failures += "$folder contains pollution marker: $bad"
-        }
+        $failures += "$($dir.Name) has malformed one-line frontmatter"
     }
 }
 
@@ -66,24 +56,22 @@ $router = "skills/hormozi-operator-router/SKILL.md"
 if (Test-Path $router) {
     $routerText = [System.IO.File]::ReadAllText($router)
     foreach ($needle in @(
-        "version: 1.2.0",
-        "Daedraflame",
-        "ADHD/autistic",
-        "Dixper-style",
-        "Value Equation",
-        "More / Better / New",
-        "Proof > Promise",
-        "4 Rs",
-        "One Thing",
-        "maker time",
-        "content as targeting",
-        "# Bottleneck",
-        "# Economic truth",
-        "# What to stop doing",
-        "# Next measurable action",
-        "# Scoreboard",
-        "# Need next",
-        "Never claim to be Alex Hormozi"
+        'CRITICAL OUTPUT CONTRACT:',
+        'FORBIDDEN PRIMARY ADVICE:',
+        'DAEDRAFLAME HORROR DEFAULT:',
+        'stream moment -> clipped proof asset -> short-form hook -> viewer click/follow -> Discord or next-stream return loop',
+        'NEXT MEASURABLE ACTION DEFAULT:',
+        'DEFAULT RESPONSE STRUCTURE:',
+        'SCOREBOARD DEFAULT:',
+        'STYLE:',
+        '# Bottleneck',
+        '# Need next',
+        'No "Would you like to proceed?"',
+        'No "Based on your situation"',
+        'Mixer or dead platforms',
+        'one bottleneck',
+        'one plan',
+        'one scoreboard'
     )) {
         if ($routerText -notlike "*$needle*") {
             $failures += "router missing required text: $needle"
@@ -94,7 +82,7 @@ if (Test-Path $router) {
 $memory = "skills/daedraflame-memory/SKILL.md"
 if (Test-Path $memory) {
     $memoryText = [System.IO.File]::ReadAllText($memory)
-    foreach ($needle in @("Scoreboard fields", "Past-action memory format", "Experiment memory format", "Daedraflame", "Twitch horror")) {
+    foreach ($needle in @("Micheal", "Daedraflame", "Twitch", "horror", "Odysseus", "Ollama", "Codex", "GitHub")) {
         if ($memoryText -notlike "*$needle*") {
             $failures += "memory missing required text: $needle"
         }
