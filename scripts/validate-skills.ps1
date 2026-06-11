@@ -1,66 +1,102 @@
 $ErrorActionPreference = "Stop"
 
-$expectedContract = 'CRITICAL OUTPUT CONTRACT: The response must begin with "# Bottleneck". The first sentence must be a diagnosis, not a greeting. Forbidden openings: "Sure", "Okay", "Happy to help", "Let''s dive in", "Let''s move forward", "I need more information". Questions only under "# Need next" at the end. Never list skills to the user. Never say "let''s use this skill". Never output manage_skills or tool-call text. Never claim to be Alex Hormozi or use private details.'
-$requiredOrder = @(
-    '^# .+',
-    '^Retrieval keywords:',
-    '^CRITICAL OUTPUT CONTRACT:',
-    '^## Purpose$',
-    '^## When to use$',
-    '^## When NOT to use$',
-    '^## Inputs to look for$',
-    '^## Operating principles$',
-    '^## Hard rules$',
-    '^## Response structure$',
-    '^## Metrics / scoreboard$',
-    '^## Example user requests$',
-    '^## Example ideal response style$',
-    '^## Failure modes to avoid$'
+$expectedSkills = @(
+    "daedraflame-memory",
+    "hormozi-operator-router"
 )
-$forbiddenOpenings = @('Sure', 'Okay', 'Happy to help', "Let's dive in", "Let's move forward", 'I need more information')
-$failures = @()
 
-Get-ChildItem -Path "skills" -Directory | Sort-Object Name | ForEach-Object {
-    $folder = $_.Name
-    $file = Join-Path $_.FullName "SKILL.md"
-    if (!(Test-Path $file)) { $failures += "$folder missing SKILL.md"; return }
+$failures = @()
+$skillDirs = Get-ChildItem -Path "skills" -Directory | Sort-Object Name
+$actual = @($skillDirs | ForEach-Object { $_.Name })
+
+foreach ($name in $expectedSkills) {
+    if ($actual -notcontains $name) {
+        $failures += "missing expected skill folder: $name"
+    }
+}
+
+foreach ($name in $actual) {
+    if ($expectedSkills -notcontains $name) {
+        $failures += "unexpected skill folder remains: $name"
+    }
+}
+
+foreach ($dir in $skillDirs) {
+    $folder = $dir.Name
+    $file = Join-Path $dir.FullName "SKILL.md"
+    if (!(Test-Path $file)) {
+        $failures += "$folder missing SKILL.md"
+        continue
+    }
 
     $text = [System.IO.File]::ReadAllText($file)
     $lines = $text -split "`n"
 
-    if ($lines.Count -le 50) { $failures += "$folder has $($lines.Count) physical lines; expected >50" }
-    if ($lines[0].TrimEnd("`r") -ne '---') { $failures += "$folder does not start with standalone ---" }
-    if ($lines[1].TrimEnd("`r") -ne "name: $folder") { $failures += "$folder second line is not exact folder name" }
-    if ($lines[3].TrimEnd("`r") -ne 'version: 1.1.0') { $failures += "$folder version is not 1.1.0" }
-    if ($lines[4].TrimEnd("`r") -ne 'category: creator-business') { $failures += "$folder category mismatch" }
-    if ($lines[5].TrimEnd("`r") -ne 'status: published') { $failures += "$folder status mismatch" }
-    if ($lines[6].TrimEnd("`r") -ne 'confidence: 0.95') { $failures += "$folder confidence mismatch" }
-    if ($lines[7].TrimEnd("`r") -ne '---') { $failures += "$folder frontmatter does not close on line 8" }
-    if ($text -match '(?m)^---[ 	]+name:') { $failures += "$folder has malformed one-line frontmatter" }
-
-    foreach ($needle in @($expectedContract, '# Bottleneck', '# Need next', 'Never list skills to the user', 'Never output manage_skills', 'Never claim to be Alex Hormozi', 'One Thing', 'Value Equation', 'More/Better/New', 'Proof over Promise', '4 Rs')) {
-        if ($text -notlike "*$needle*") { $failures += "$folder missing required text: $needle" }
+    if ($lines.Count -gt 400) {
+        $failures += "$folder has more than 400 lines"
+    }
+    if ($lines[0].TrimEnd("`r") -ne "---") {
+        $failures += "$folder does not start with standalone ---"
+    }
+    if ($lines[1].TrimEnd("`r") -ne "name: $folder") {
+        $failures += "$folder second line is not exact folder name"
     }
 
-
-    foreach ($opening in $forbiddenOpenings) {
-        if ($lines | Where-Object { $_.TrimStart() -eq $opening -or $_.TrimStart().StartsWith($opening + ',') -or $_.TrimStart().StartsWith($opening + '.') }) {
-            $failures += "$folder contains forbidden opening as a standalone output line: $opening"
+    $frontmatterClose = -1
+    for ($i = 1; $i -lt [Math]::Min($lines.Count, 40); $i++) {
+        if ($lines[$i].TrimEnd("`r") -eq "---") {
+            $frontmatterClose = $i
+            break
         }
     }
-
-    $positions = @()
-    foreach ($pattern in $requiredOrder) {
-        $matchIndex = -1
-        for ($i = 0; $i -lt $lines.Count; $i++) {
-            if ($lines[$i].TrimEnd("`r") -match $pattern) { $matchIndex = $i; break }
-        }
-        if ($matchIndex -lt 0) { $failures += "$folder missing ordered section pattern: $pattern" }
-        $positions += $matchIndex
+    if ($frontmatterClose -lt 2) {
+        $failures += "$folder frontmatter does not close"
     }
-    for ($i = 1; $i -lt $positions.Count; $i++) {
-        if ($positions[$i] -ge 0 -and $positions[$i - 1] -ge 0 -and $positions[$i] -le $positions[$i - 1]) {
-            $failures += "$folder section order is invalid near pattern $($requiredOrder[$i])"
+    if ($text -match '(?m)^---[ \t]+name:') {
+        $failures += "$folder has malformed one-line frontmatter"
+    }
+    foreach ($bad in @("@@ -", "<<<<<<<", "=======", ">>>>>>>")) {
+        if ($text.Contains($bad)) {
+            $failures += "$folder contains pollution marker: $bad"
+        }
+    }
+}
+
+$router = "skills/hormozi-operator-router/SKILL.md"
+if (Test-Path $router) {
+    $routerText = [System.IO.File]::ReadAllText($router)
+    foreach ($needle in @(
+        "version: 1.2.0",
+        "Daedraflame",
+        "ADHD/autistic",
+        "Dixper-style",
+        "Value Equation",
+        "More / Better / New",
+        "Proof > Promise",
+        "4 Rs",
+        "One Thing",
+        "maker time",
+        "content as targeting",
+        "# Bottleneck",
+        "# Economic truth",
+        "# What to stop doing",
+        "# Next measurable action",
+        "# Scoreboard",
+        "# Need next",
+        "Never claim to be Alex Hormozi"
+    )) {
+        if ($routerText -notlike "*$needle*") {
+            $failures += "router missing required text: $needle"
+        }
+    }
+}
+
+$memory = "skills/daedraflame-memory/SKILL.md"
+if (Test-Path $memory) {
+    $memoryText = [System.IO.File]::ReadAllText($memory)
+    foreach ($needle in @("Scoreboard fields", "Past-action memory format", "Experiment memory format", "Daedraflame", "Twitch horror")) {
+        if ($memoryText -notlike "*$needle*") {
+            $failures += "memory missing required text: $needle"
         }
     }
 }
