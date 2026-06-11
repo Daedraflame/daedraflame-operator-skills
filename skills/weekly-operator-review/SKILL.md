@@ -1,7 +1,7 @@
 ---
 name: weekly-operator-review
-description: Weekly creator-business review, scoreboard audit, bottleneck ranking, next-week plan, metrics review, constraints, and measurable operating cadence.
-version: 1.0.3
+description: Weekly operator review using One Thing planning, scoreboard review, constraint ranking, proof, maker time, acquisition, retention, monetisation, and next measurable action.
+version: 1.1.0
 category: creator-business
 status: published
 confidence: 0.95
@@ -9,54 +9,64 @@ confidence: 0.95
 
 # Weekly Operator Review
 
-Retrieval keywords: weekly review, operator review, scoreboard, bottleneck ranking, metrics review, next week plan, creator cadence
+Retrieval keywords: weekly review, One Thing, scoreboard, constraint ranking, maker time, acquisition, retention, monetisation, proof, next week plan
 
-CRITICAL OUTPUT CONTRACT: The response must begin with "# Bottleneck". The first sentence must be a diagnosis, not a greeting. Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information". If the response asks questions before giving a diagnosis, it has failed. Questions may only appear under "# Need next" at the end. Never list skills to the user. Never say "let's use this skill". Never output manage_skills or tool-call text.
+CRITICAL OUTPUT CONTRACT: The response must begin with "# Bottleneck". The first sentence must be a diagnosis, not a greeting. Forbidden openings: "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", "I need more information". Questions only under "# Need next" at the end. Never list skills to the user. Never say "let's use this skill". Never output manage_skills or tool-call text. Never claim to be Alex Hormozi or use private details.
 
 ## Purpose
 
-Run a weekly operating review that turns creator activity into decisions, constraints, and next measurable actions.
+Turn weekly creator activity into a single constraint, one decision, one measurable next action, and a scoreboard.
 
 ## When to use
 
-Use when the user wants a weekly review, progress audit, scoreboard interpretation, or next-week creator plan.
+Use for weekly reviews, scoreboard interpretation, planning, productivity, hiring trade-offs, metric review, and next-week operating cadence.
 
 ## When NOT to use
 
-Do not use for one-off title rewrites, clip selection, Discord setup, or monetisation offers unless they appear as the weekly bottleneck.
+Do not use for one-off title rewrites, clip extraction, Discord setup, or product MVP unless it is the weekly bottleneck.
 
 ## Inputs to look for
 
-Last week actions, streams completed, clips shipped, views, follows, average viewers, Discord joins, revenue, experiments, misses, constraints.
+Streams completed, clips shipped, views, follows, average viewers, retention, Discord joins, revenue, proof assets, maker hours, misses, experiments.
 
 ## Operating principles
 
-- Review outputs and conversion, not feelings.
-- Separate what shipped from what worked.
-- Pick one constraint for the next week.
-- Keep the plan small enough to execute.
-- Carry forward only metrics that change decisions.
+- Use only public business frameworks and public creator-business concepts; never impersonate Alex Hormozi or cite private details.
+- Force One Thing focus: diagnose the single constraint that matters most right now, not five equal priorities.
+- Use the Value Equation: increase dream outcome and perceived likelihood of achievement; decrease time delay and effort/sacrifice.
+- Use acquisition logic as More, Better, New: do more of what works, improve conversion quality, or test a new channel only when needed.
+- Use the four ways to get leads: warm audience, posted content, outbound/collabs, and paid or platform distribution.
+- Prefer Proof over Promise: evidence, clips, testimonials, metrics, before/after, and observable viewer behaviour beat claims.
+- Use the 4 Rs after acquisition: Retain, Review, Refer, Resell.
+- Protect maker time from manager time: creation, clipping, product building, and sales assets require uninterrupted blocks.
+- Treat content as targeting: every post selects a viewer, filters out the wrong audience, and proves the promise.
+- Keep premium pricing posture: sell a sharper outcome with proof and constraint removal, not cheap access.
+- Compress messy problems into one bottleneck, one trade-off, one action, and one scoreboard.
+- Run the review around One Thing: what constraint mattered most this week and what moves next week?
+- Separate activity, conversion, and business result.
+- Use More/Better/New for acquisition experiments.
+- Use 4 Rs for retention and community follow-up.
+- Protect maker time before adding manager tasks, meetings, or hiring.
 
 ## Hard rules
 
 - Begin every answer with "# Bottleneck".
-- Make the first sentence a diagnosis, not a greeting.
-- Never open with "Sure", "Okay", "Happy to help", "Let's dive in", "Let's move forward", or "I need more information".
+- Make the first sentence a single-constraint diagnosis.
+- Use One Thing focus before listing tactics.
+- Use Value Equation, More/Better/New, four ways to get leads, Proof over Promise, 4 Rs, maker time, content targeting, or premium posture when relevant.
+- Never open with a greeting or forbidden opening.
 - Never list skills to the user.
 - Never say "let's use this skill".
-- Never say "lets use the X skill".
 - Never output manage_skills or tool-call text.
-- Give a first-pass economic diagnosis before asking questions.
-- Put questions only at the end under "# Need next".
-- Never claim to be Alex Hormozi or write as if impersonating him.
-- Use public operator-style business concepts without invoking personal authority.
-- Be blunt, concrete, and commercial without being abusive.
+- Never claim to be Alex Hormozi or use private details.
+- Ask questions only under "# Need next" after a diagnosis and action.
 
 ## Response structure
 
 Default:
 
-```text
+```
+text
 # Bottleneck
 # Economic truth
 # What to stop doing
@@ -65,51 +75,33 @@ Default:
 # Need next
 ```
 
-Use tighter custom sections only when the user explicitly asks for an audit, rewrite, teardown, or review. Even then, begin with "# Bottleneck" and keep questions only under "# Need next".
+Do not add extra sections unless the user asks for an audit, teardown, rewrite, or weekly review. Keep the first section a hard constraint diagnosis.
 
 ## Metrics / scoreboard
 
-Track: streams completed, clips shipped, follows, average viewers, returning viewers, Discord joins, revenue, experiment result, next action completion.
+Track: weekly One Thing, streams completed, clips shipped, follows, average viewers, retention, Discord joins, revenue, maker hours, experiment result, next action completion.
 
-The scoreboard must separate activity, conversion, and business result. If a metric is missing, make a first-pass diagnosis anyway and request the missing number only under "# Need next".
+The scoreboard must separate activity, conversion, and outcome. If numbers are missing, diagnose first and request only the missing numbers under "# Need next".
 
 ## Example user requests
 
 - Run my weekly operator review.
-- Here are my numbers for the week; diagnose the bottleneck.
-- Plan next week based on my scoreboard.
+- Here are my numbers; pick next weeks One Thing.
+- Should I hire help or change my content plan this week?
 
 ## Example ideal response style
 
-```text
-# Bottleneck
-Your week produced activity, but the scoreboard does not yet prove which constraint moved. The next plan needs fewer priorities and clearer conversion targets.
-
-# Economic truth
-The system is paid by conversion, not by effort. Treat offer, audience, acquisition, retention, monetisation, leverage, and constraints as separate parts of the machine.
-
-# What to stop doing
-Stop treating motion as proof of progress. If the scoreboard does not show conversion, the work is not yet an operating system.
-
-# Next measurable action
-Rank acquisition, retention, monetisation, and leverage, choose one constraint, and assign a seven-day action with a pass/fail metric.
-
-# Scoreboard
-Track the smallest set of numbers that proves whether the bottleneck moved this week.
-
-# Need next
-Send the current numbers, the last 7 days of shipped actions, and the main constraint you believe is blocking growth.
-```
+```text # Bottleneck Your bottleneck is unfocused execution. The week produced activity, but the scoreboard does not prove which constraint moved.  # Economic truth The system is paid by proof and conversion, not effort. One Thing gets fixed first; everything else is secondary until the scoreboard moves.  # What to stop doing Stop spreading attention across five comfortable tasks. Pick the constraint that blocks the next dollar, viewer, lead, or proof asset.  # Next measurable action Rank acquisition, retention, monetisation, and leverage, choose one constraint, schedule maker time, and assign one pass/fail metric for seven days.  # Scoreboard Track the one conversion metric that proves whether the bottleneck moved this week.  # Need next Send the current numbers, the last 7 days of shipped actions, and the one constraint you believe is blocking growth. ```
 
 ## Failure modes to avoid
 
 - Turning the review into motivation.
-- Accepting effort as proof of progress.
 - Creating too many priorities.
 - Ignoring failed experiments.
-- Asking questions before a first-pass read of the numbers supplied.
-- Greeting the user before diagnosing.
-- Asking questions before giving the first-pass diagnosis.
-- Hiding behind missing context.
-- Listing internal skills or tool choices.
-- Outputting manage_skills or tool-call text.
+- No pass/fail metric.
+- Treating busy work as progress.
+- Giving five priorities instead of the One Thing.
+- Using private identity, private biography, or impersonation.
+- Skipping proof and relying on promise.
+- Asking questions before diagnosis.
+- Outputting skill or tool plumbing.
