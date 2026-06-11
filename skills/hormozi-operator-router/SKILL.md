@@ -65,15 +65,12 @@ User request, platform, offer, audience, acquisition source, proof assets, reten
 
 Default:
 
-```
-text
 # Bottleneck
 # Economic truth
 # What to stop doing
 # Next measurable action
 # Scoreboard
 # Need next
-```
 
 Do not add extra sections unless the user asks for an audit, teardown, rewrite, or weekly review. Keep the first section a hard constraint diagnosis.
 
@@ -91,7 +88,23 @@ The scoreboard must separate activity, conversion, and outcome. If numbers are m
 
 ## Example ideal response style
 
-```text # Bottleneck Your bottleneck is acquisition, not effort. The live product has some proof because engaged viewers stay, but the proof is trapped inside Twitch instead of being turned into targeted distribution.  # Economic truth The system is paid by proof and conversion, not effort. One Thing gets fixed first; everything else is secondary until the scoreboard moves.  # What to stop doing Stop spreading attention across five comfortable tasks. Pick the constraint that blocks the next dollar, viewer, lead, or proof asset.  # Next measurable action For the next 7 days, protect a 90-minute maker block after each stream, pull 5 proof clips, post 2 per day, and track follows per 1,000 views plus Twitch clicks.  # Scoreboard Track the one conversion metric that proves whether the bottleneck moved this week.  # Need next Send the current numbers, the last 7 days of shipped actions, and the one constraint you believe is blocking growth. ```
+# Bottleneck
+Your bottleneck is the single constraint that blocks the next viewer, lead, dollar, proof asset, or retention loop.
+
+# Economic truth
+The system is paid by proof and conversion, not effort. One Thing gets fixed first; everything else is secondary until the scoreboard moves.
+
+# What to stop doing
+Stop spreading attention across five comfortable tasks. Pick the constraint that blocks the next measurable result.
+
+# Next measurable action
+Choose one seven-day action tied to the bottleneck and make the pass/fail metric visible before doing more work.
+
+# Scoreboard
+Track the one conversion metric that proves whether the bottleneck moved this week.
+
+# Need next
+Send the current numbers, the last 7 days of shipped actions, and the one constraint you believe is blocking growth.
 
 ## Failure modes to avoid
 

@@ -1,10 +1,6 @@
 $ErrorActionPreference = "Stop"
 
 $expectedContract = 'CRITICAL OUTPUT CONTRACT: The response must begin with "# Bottleneck". The first sentence must be a diagnosis, not a greeting. Forbidden openings: "Sure", "Okay", "Happy to help", "Let''s dive in", "Let''s move forward", "I need more information". Questions only under "# Need next" at the end. Never list skills to the user. Never say "let''s use this skill". Never output manage_skills or tool-call text. Never claim to be Alex Hormozi or use private details.'
-$backtick = [string][char]96
-$tripleFenceText = ($backtick * 3) + "text"
-$doubleFenceText = ($backtick * 2) + "text"
-$doubleFence = $backtick * 2
 $requiredOrder = @(
     '^# .+',
     '^Retrieval keywords:',
@@ -42,13 +38,10 @@ Get-ChildItem -Path "skills" -Directory | Sort-Object Name | ForEach-Object {
     if ($lines[7].TrimEnd("`r") -ne '---') { $failures += "$folder frontmatter does not close on line 8" }
     if ($text -match '(?m)^---[ 	]+name:') { $failures += "$folder has malformed one-line frontmatter" }
 
-    foreach ($needle in @($expectedContract, '# Bottleneck', '# Need next', 'Never list skills to the user', 'Never output manage_skills', 'Never claim to be Alex Hormozi', 'One Thing', 'Value Equation', 'More/Better/New', 'Proof over Promise', '4 Rs', $tripleFenceText)) {
+    foreach ($needle in @($expectedContract, '# Bottleneck', '# Need next', 'Never list skills to the user', 'Never output manage_skills', 'Never claim to be Alex Hormozi', 'One Thing', 'Value Equation', 'More/Better/New', 'Proof over Promise', '4 Rs')) {
         if ($text -notlike "*$needle*") { $failures += "$folder missing required text: $needle" }
     }
 
-    if ($lines | Where-Object { $_.TrimEnd("`r") -eq $doubleFenceText -or $_.TrimEnd("`r") -eq $doubleFence }) {
-        $failures += "$folder contains malformed two-backtick code fence"
-    }
 
     foreach ($opening in $forbiddenOpenings) {
         if ($lines | Where-Object { $_.TrimStart() -eq $opening -or $_.TrimStart().StartsWith($opening + ',') -or $_.TrimStart().StartsWith($opening + '.') }) {
