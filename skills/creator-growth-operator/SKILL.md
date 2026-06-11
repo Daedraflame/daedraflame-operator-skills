@@ -63,7 +63,6 @@ Creator niche, dream outcome for the audience, proof assets, content volume, con
 
 ## Response structure
 
-Default:
 
 # Bottleneck
 # Economic truth

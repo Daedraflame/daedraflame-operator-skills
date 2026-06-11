@@ -63,7 +63,6 @@ Discord joins, activation rate, active members, events, rituals, onboarding, cha
 
 ## Response structure
 
-Default:
 
 # Bottleneck
 # Economic truth

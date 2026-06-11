@@ -63,7 +63,6 @@ Streams completed, clips shipped, views, follows, average viewers, retention, Di
 
 ## Response structure
 
-Default:
 
 # Bottleneck
 # Economic truth

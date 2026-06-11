@@ -63,7 +63,6 @@ Average viewers, subs, revenue per stream, donations, buyer conversion, offer, p
 
 ## Response structure
 
-Default:
 
 # Bottleneck
 # Economic truth

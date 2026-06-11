@@ -63,7 +63,6 @@ Clip inventory, posting volume, hook, first two seconds, retention graph, follow
 
 ## Response structure
 
-Default:
 
 # Bottleneck
 # Economic truth

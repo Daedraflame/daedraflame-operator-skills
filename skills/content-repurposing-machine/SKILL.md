@@ -63,7 +63,6 @@ VOD length, timestamps, reaction peaks, proof moments, story arc, offer, CTA, ed
 
 ## Response structure
 
-Default:
 
 # Bottleneck
 # Economic truth

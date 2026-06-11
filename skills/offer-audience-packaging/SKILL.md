@@ -63,7 +63,6 @@ Target viewer, desired outcome, current title/thumbnail/hook, proof, niche, form
 
 ## Response structure
 
-Default:
 
 # Bottleneck
 # Economic truth

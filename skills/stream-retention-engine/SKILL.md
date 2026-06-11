@@ -63,7 +63,6 @@ Average watch time, first 10-minute retention, return viewers, unique chatters, 
 
 ## Response structure
 
-Default:
 
 # Bottleneck
 # Economic truth

@@ -63,7 +63,6 @@ Buyer, painful/exciting interaction, dream outcome, proof, price, build scope, f
 
 ## Response structure
 
-Default:
 
 # Bottleneck
 # Economic truth

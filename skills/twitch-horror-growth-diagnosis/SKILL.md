@@ -63,7 +63,6 @@ Average viewers, returning viewers, unique chatters, reaction quality, clip volu
 
 ## Response structure
 
-Default:
 
 # Bottleneck
 # Economic truth
